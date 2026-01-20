@@ -1,7 +1,7 @@
 title: Mi sitio Jekyll
 description: Sitio con Jekyll + Decap CMS
-baseurl: "/ankolture"
-url: "https://usuario.github.io"
+baseurl: "/deskmisados"
+url: "https://deskmisadossite.github.io"
 
 markdown: kramdown
 theme: minima
