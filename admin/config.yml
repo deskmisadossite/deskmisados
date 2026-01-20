@@ -1,10 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
   repo: deskmisadossite/deskmisados
   branch: main
 
 site_url: https://deskmisadossite.github.io/deskmisados
-display_url: https://deskmisadossite.github.io/deskmisados
+display_url: https://deskmisadossite.github.io
 
 media_folder: "assets/img/posts"
 public_folder: "/deskmisados/assets/img/posts"
