@@ -3,8 +3,11 @@ backend:
   repo: deskmisadossite/deskmisados
   branch: main
 
+site_url: https://deskmisadossite.github.io/deskmisados
+display_url: https://deskmisadossite.github.io/deskmisados
+
 media_folder: "assets/img/posts"
-public_folder: "/ankolture/assets/img/posts"
+public_folder: "/deskmisados/assets/img/posts"
 
 collections:
   - name: "blog"
