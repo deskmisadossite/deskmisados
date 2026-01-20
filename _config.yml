@@ -3,5 +3,8 @@ description: Sitio con Jekyll + Decap CMS
 baseurl: "/deskmisados"
 url: "https://deskmisadossite.github.io"
 
+include:
+  - admin
+
 markdown: kramdown
 theme: minima
