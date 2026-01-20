@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: usuario/ankolture
+  repo: deskmisadossite/deskmisados
   branch: main
 
 media_folder: "assets/img/posts"
