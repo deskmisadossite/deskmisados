@@ -3,6 +3,13 @@ layout: default
 title: Inicio
 ---
 
-# Bienvenido 🚀
+<h1>Blog</h1>
 
-Este sitio usa **Jekyll + Decap CMS**
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <small>— {{ post.date | date: "%d/%m/%Y" }}</small>
+    </li>
+  {% endfor %}
+</ul>
