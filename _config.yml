@@ -2,6 +2,8 @@ title: Mi sitio Jekyll
 description: Sitio con Jekyll + Decap CMS
 baseurl: "/deskmisados"
 url: "https://deskmisadossite.github.io"
+permalink: /:year/:month/:day/:title/
+
 
 include:
   - admin
