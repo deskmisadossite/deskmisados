@@ -1,0 +1,332 @@
+---
+layout: defaults
+---
+
+
+
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+{%- include head.html -%}
+
+<body>
+  {%- include header.html -%}
+  <div id="volver-fixed" class="text-white py-2"
+    style="background-color:#1c1c1e; font-size: 0.8rem; position: fixed; top: 56px; left: 0; width: 100%; z-index: 1030; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="/" class="volver-link d-flex align-items-center text-decoration-none text-white">
+        <i class="fa fa-long-arrow-alt-left me-2"></i>
+        <span>Volver</span>
+      </a>
+      <a style="text-decoration: none;" href="#"><i class="fas fa-ruler"></i> Medidas aproximadas</a>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    {{ content }}
+  </div>
+
+  <div class="containers mt-5">
+
+    <!-- 1. Logo -->
+    {% for exp in site.author_work_experiences %}
+    {% if exp.visibility == true %}
+    <!-- <img src="{{ site.url }}{{ site.baseurl }}/assets/img/{{ exp.company_logo }}" class="profile-picture" /> -->
+    {% endif %}
+    {% endfor %}
+
+
+    <div class="card">
+
+      <img class="sizeguide-img my-4" src="{{site.url}}{{site.baseurl}}/assets/img/sizeguide/talla-unisex.webp" />
+
+
+      <div class="size-box">
+        <div class="size-header">S</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">HOMBRO</span><br>43CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">ANCHO</span><br>50CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">MANGA</span><br>25CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">LARGO</span><br>70CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="size-box">
+        <div class="size-header gray">M</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              HOMBRO<br>48CM
+            </div>
+            <div class="col-6">
+              ANCHO<br>53CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              MANGA<br>25CM
+            </div>
+            <div class="col-6">
+              LARGO<br>71CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="size-box">
+        <div class="size-header">L</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">HOMBRO</span><br>49CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">ANCHO</span><br>55CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">MANGA</span><br>27CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">LARGO</span><br>74CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="size-box">
+        <div class="size-header gray">XL</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              HOMBRO<br>53CM
+            </div>
+            <div class="col-6">
+              ANCHO<br>57CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              MANGA<br>27CM
+            </div>
+            <div class="col-6">
+              LARGO<br>78CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <img class="sizeguide-img my-4" src="{{site.url}}{{site.baseurl}}/assets/img/sizeguide/talla-hombre.webp" />
+
+
+      <div class="size-box">
+        <div class="size-header">S</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">HOMBRO</span><br>41CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">ANCHO</span><br>48CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">MANGA</span><br>19CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">LARGO</span><br>70CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="size-box">
+        <div class="size-header gray">M</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              HOMBRO<br>43CM
+            </div>
+            <div class="col-6">
+              ANCHO<br>49CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              MANGA<br>20CM
+            </div>
+            <div class="col-6">
+              LARGO<br>72CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="size-box">
+        <div class="size-header">L</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">HOMBRO</span><br>46CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">ANCHO</span><br>54CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">MANGA</span><br>20CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">LARGO</span><br>76CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="size-box">
+        <div class="size-header gray">XL</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              HOMBRO<br>46CM
+            </div>
+            <div class="col-6">
+              ANCHO<br>55CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              MANGA<br>25CM
+            </div>
+            <div class="col-6">
+              LARGO<br>78CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <img class="sizeguide-img my-4" src="{{site.url}}{{site.baseurl}}/assets/img/sizeguide/talla-mujer.webp" />
+
+
+      <div class="size-box">
+        <div class="size-header">S</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">HOMBRO</span><br>36CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">ANCHO</span><br>38CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">MANGA</span><br>16CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">LARGO</span><br>59CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="size-box">
+        <div class="size-header gray">M</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              HOMBRO<br>38CM
+            </div>
+            <div class="col-6">
+              ANCHO<br>40CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              MANGA<br>18CM
+            </div>
+            <div class="col-6">
+              LARGO<br>63CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="size-box">
+        <div class="size-header">L</div>
+        <div class="size-body">
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">HOMBRO</span><br>39CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">ANCHO</span><br>42CM
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <span class="label-blue">MANGA</span><br>19CM
+            </div>
+            <div class="col-6">
+              <span class="label-blue">LARGO</span><br>64CM
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="text-white py-2"
+      style="background-color:#1c1c1e; font-size: 0.8rem; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1030; box-shadow: 0 -2px 10px rgba(0,0,0,0.2);">
+      <div class="container text-center">
+        <div class="cart mt-2 d-flex justify-content-center gap-2">
+          <a href="/catalog" class="btn btn-sm btn-danger text-uppercase text-white">Catálogo <i
+              class="fas fa-book fa-sm text-white"></i></a>
+          <a href="/care" class="btn btn-sm btn-success text-uppercase  text-white">Cuidados <i
+              class="fas fa-tshirt"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+</html>

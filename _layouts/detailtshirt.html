@@ -1,0 +1,227 @@
+---
+layout: defaults
+---
+
+<div id="volver-fixed" class="text-white py-2"
+    style="background-color:#1c1c1e; font-size: 0.8rem; position: fixed; top: 56px; left: 0; width: 100%; z-index: 1030; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+    <div class="container d-flex align-items-center justify-content-between">
+        <a  class="d-flex align-items-center text-decoration-none text-uppercase text-white" onclick="goCatalog()">
+            <i class="fa fa-long-arrow-alt-left me-2"></i>
+            <span>Volver</span>
+        </a>
+        <a style="text-decoration: none;" href="#"><i class="fab fa-instagram"></i> VER EN
+            INSTAGRAM</a>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-10">
+            <div class="card">
+
+                <h1 class="card-title-tshirt text-center"><span class="tshirt-name">###</span><br> T-SHIRT <span
+                        class="tshirt-id">000</span></h1>
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <div class="images">
+
+                            <div class="image-wrapper w-100 p-2">
+                                <img id="main-image" class="main-img"
+                                    src="{{site.url}}{{site.baseurl}}/assets/img/collection/thepockets/thepockets.png" />
+                            </div>
+                            <div id="thumbnail-container" class="thumbnail text-center">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="products p-4">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                            </div>
+
+                            <img src="{{site.url}}{{site.baseurl}}/assets/img/collection/thepockets/thepockets.png"
+                                alt="" style="width: 160px; height: auto;"
+                                class="logo-collection img-fluid d-block mx-auto mb-1">
+                            <div class="mt-4 mb-3"> <span class="text-uppercase brand">ANKOLTURE</span>
+                                <h5 class="text-uppercase"><span class="tshirt-name">###</span> T-SHIRT</h5>
+                                <div class="price d-flex flex-row align-items-center"> <span
+                                        class="act-price">$60.000</span> <span>-COP</span>
+                                    <div class="ml-2"> <small class="dis-price"> </small> <span
+                                            class="text-danger">-INCLUYE ENVIO</span>
+                                    </div>
+                                </div>
+                                <div class="text-white mt-1 ">
+                                    <p class="guia-tallas">
+                                        <a href="/sizeguide"
+                                            class="btn btn-outline-light rounded-pill guia-tallas text-white">
+                                            <i class="fas fa-ruler"></i> GUIA DE TALLAS
+                                        </a>
+                                        <i class="fas fa-arrow-left animated-arrow"></i>
+                                    </p>
+                                    <div class="text-white mt-1 ">
+                                        <p class="cuidados">
+                                            <a href="/care"
+                                                class="btn btn-outline-light rounded-pill guia-tallas text-white">
+                                                <i class="fas fa-tshirt"></i> CUIDADOS
+                                            </a>
+                                            <i class="fas fa-arrow-left animated-arrow"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="about">Shop from a wide range of t-shirt. Pefect for
+                                your everyday use, you could pair it with a stylish pair of jeans or
+                                trousers complete the look.</p>
+
+
+
+
+
+                            <div class="sizes mt-2 align-items-center text-center">
+                                <h6 class="text-uppercase">TELA</h6>
+                                <label class="radio"> <input type="radio" name="cloth" value="Premium" checked>
+                                    <span>Premium</span>
+                                </label> <label class="radio"> <input type="radio" name="cloth" value="Normal">
+                                    <span>Normal</span>
+                                </label>
+
+                            </div>
+
+                            <div class="sizes mt-2 align-items-center text-center">
+                                <h6 class="text-uppercase">GENERO</h6>
+                                <div id="gender-radios">
+                                    <label class="radio"> <input type="radio" name="gender" value="Hombre">
+                                        <span>HOMBRE</span></label>
+                                    <label class="radio"> <input type="radio" name="gender" value="Mujer">
+                                        <span>MUJER</span></label>
+                                </div>
+                                <div id="gender-unisex" style="display: none;">
+                                    <label class="radio"> <input type="radio" name="gender" value="Unisex" checked>
+                                        <span>UNISEX</span></label>
+                                </div>
+
+                            </div>
+
+                            <div class="sizes mt-2 align-items-center text-center">
+                                <h6 class="text-uppercase">TALLA</h6> <label class="radio"> <input type="radio"
+                                        name="size" value="S" checked> <span>S</span>
+                                </label> <label class="radio"> <input type="radio" name="size" value="M"> <span>M</span>
+                                </label> <label class="radio"> <input type="radio" name="size" value="L"> <span>L</span>
+                                </label>
+                                <label class="radio"> <input type="radio" name="size" value="XL">
+                                    <span>XL</span> </label>
+
+                            </div>
+
+
+                            <div class="colors mt-2 align-items-center text-center">
+                                <h6 class="text-uppercase">COLOR</h6>
+
+                                <label class="color-radio">
+                                    <input type="radio" name="color" value="Negro" checked>
+                                    <span class="color-circle" style="background-color: black;"></span>
+                                </label>
+
+                                <label class="color-radio">
+                                    <input type="radio" name="color" value="Blanco">
+                                    <span class="color-circle" style="background-color: white;"></span>
+                                </label>
+
+                            </div>
+
+                            <div class="cantidad-container" style="margin-top: 10px;">
+                                <label for="cantidad">Cantidad:</label>
+                                <div class="cantidad-contenido">
+                                    <button id="restar" class="btn-cantidad" disabled>-</button>
+                                    <span id="cantidad" class="cantidad-texto">1</span>
+                                    <button id="sumar" class="btn-cantidad">+</button>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="cart mt-4 d-flex flex-column align-items-center text-center">
+
+                                <button class="btn btn-danger text-uppercase mb-3 px-4"
+                                    onclick="agregarAlCarrito()">Agregar al Carrito</button>
+
+                                <div id="btnHola" style="display: none;">
+                                    <div class="d-flex justify-content-end p-3">
+                                        <div class="position-relative">
+                                            <a style="text-decoration: none;"
+                                                href="{{site.url}}{{site.baseurl}}/shoppingcart">VER CARRITO
+                                                <i class="fas fa-shopping-cart text-white fs-3">
+                                                    <span class="cart-count"
+                                                        style="position: absolute; top: -15px; right: -15px; background-color: #f69801; color: black; border-radius: 50%; padding: 5px 5px; font-size: 14px;"></span>
+                                                </i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- <div class="share-section text-muted">
+                                    <strong class="d-block mb-2 share-text">Compartir:</strong>
+                                    <div>
+
+                                        <a href="#" onclick="shareWhatsApp()" class="share-icon mx-2">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                </div> -->
+
+                                <div id="mensaje-compartir" class="mt-2 text-success text-center"
+                                    style="display: none;">¡Producto agregado!</div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-white py-2"
+        style="background-color:#1c1c1e; font-size: 0.8rem; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1030; box-shadow: 0 -2px 10px rgba(0,0,0,0.2);">
+        <div class="container text-center">
+            <div class="cart mt-2 d-flex justify-content-center gap-2">
+                 <a href="/catalog" class="btn btn-sm btn-danger text-uppercase text-white">Catálogo <i
+                        class="fas fa-book fa-sm text-white"></i></a>      
+                <a href="#" class="btn btn-sm btn-success text-uppercase  text-white"
+                    onclick="shareWhatsApp()">Compartir <i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ site.baseurl }}/assets/js/getproducts.js" defer></script>
+    <script src="{{ site.baseurl }}/assets/js/ispremium.js" defer></script>
+    <script src="{{ site.baseurl }}/assets/js/addshoppingcart.js" defer></script>
+    <script>
+
+        const pageUrl = window.location.href;
+        const message = encodeURIComponent("¡Mira esta super camiseta que encontré!");
+
+        function shareWhatsApp() {
+            const url = `https://api.whatsapp.com/send?text=${message}%20${encodeURIComponent(pageUrl)}`;
+            window.open(url, '_blank');
+        }
+
+        function goCatalog() {
+            const params = new URLSearchParams(window.location.search);
+            const collection = params.get("collection");
+            if (collection) {
+                window.location.href = `/coleccion/?nombre=${encodeURIComponent(collection)}`;
+            } else {
+                console.warn("No se encontró el parámetro 'collection' en la URL.");
+            }
+        }
+
+    </script>

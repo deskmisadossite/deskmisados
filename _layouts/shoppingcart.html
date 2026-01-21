@@ -1,0 +1,253 @@
+---
+layout: defaults
+---
+
+<div class="d-flex align-items-center mt-5 mb-5">
+
+  <div id="volver-fixed" class="text-white py-2"
+    style="background-color:#1c1c1e; font-size: 0.8rem; position: fixed; top: 56px; left: 0; width: 100%; z-index: 1030; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="/" class="volver-link d-flex align-items-center text-decoration-none text-white">
+        <i class="fa fa-long-arrow-alt-left me-2"></i>
+        <span>Volver</span>
+      </a>
+       <div class="d-flex justify-content-start align-items-center gap-2">
+  <button class="btn btn-outline-light rounded-pill text-white text-xs" onclick="mostrarModalWarning()">
+    <i class="fas fa-exclamation-triangle"></i> LEER IMPORTANTE!!
+  </button>
+  <i class="fas fa-arrow-left animated-arrow-warning"></i>
+</div>
+
+   
+    </div>
+  </div>
+
+
+  <div id="carrito-listado" class="container mt-5  mb-5"></div>
+
+
+</div>
+ 
+
+<div id="total-carrito-fixed" class="text-white py-2"
+  style="background-color:#1c1c1e; font-size: 0.8rem; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1030; box-shadow: 0 -2px 10px rgba(0,0,0,0.2);">
+  <div class="container text-center">
+    <h6>Total: $<span id="total-sum"></span></h6>
+    <div class="cart mt-2 d-flex justify-content-center gap-2">
+      <button class="btn btn-sm btn-danger" onclick="clearLocalStorage()">LIMPIAR CARRITO <i
+          class="fa fa-trash fa-sm text-white"></i></button>
+      <button class="btn btn-sm btn-success text-uppercase" onclick="mostrarModal()">REALIZAR PEDIDO <i
+          class="fab fa-whatsapp"></i></button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal personalizado -->
+<div class="modal fade" id="addToCartModal" tabindex="-1">
+  <div class="modal-dialog  modal-fullscreen">
+    <div class="modal-content bg-dark text-white"> <!-- Fondo negro y texto blanco -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white text-center w-100" id="addToCartModalLabel">Confirmar
+          Pedido
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">   <a style="text-decoration: none;" href="#"><i class="fab fa-whatsapp"></i> El Pedido se realizará por Whatsapp</a><br>
+          Estos son los datos de los productos que has seleccionado.<br>
+          Si estás seguro de que toda la información es correcta, haz clic en Aceptar para continuar
+          con
+          tu pedido.<br>
+          Si detectas algún error, por favor haz clic en Cancelar, revisa los datos y vuelve a
+          intentarlo.
+        </p>
+
+        <div id="modal-resumen-carrito" class="text-white"></div>
+        <div class="text-center mt-4">
+          <p><strong>Total de productos:</strong> <span id="modal-total-productos"></span></p>
+          <p><strong>Total a pagar:</strong> $<span id="modal-total-precio"></span></p>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center border-0"> <!-- Centra los botones -->
+        <button type="button" class="btn btn-secondary me-2" id="cancelModal" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="modal-accept" id="confirmAdd">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Importante -->
+<div class="modal fade" id="warningModal" tabindex="-1">
+  <div class="modal-dialog  modal-fullscreen">
+    <div class="modal-content bg-dark text-white"> <!-- Fondo negro y texto blanco -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white text-center w-100" id="warningModalLabel"> Importante antes de realizar tu compra
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <p class="text-center">
+            Queremos recordarte que tanto el diseño como la talla de la camiseta no se pueden modificar una vez
+            realizada
+            la compra.<br>
+            Por eso, te recomendamos revisar cuidadosamente todos los detalles antes de confirmar tu pedido.<br>
+
+            Para asegurarte de elegir la talla correcta, puedes consultar nuestra guía de tallas disponible en la página
+            del producto.<br>
+
+            Si tienes alguna duda, no dudes en escribirnos. ¡Gracias por tu comprensión y confianza!
+          </p>
+          <div class="text-center my-4">
+            <p class="guia-tallas d-inline-block mx-2">
+              <a href="/sizeguide" class="btn btn-outline-light rounded-pill guia-tallas text-white">
+                <i class="fas fa-ruler"></i> GUIA DE TALLAS
+              </a>
+              <i class="fas fa-arrow-left animated-arrow"></i>
+            </p>
+
+            <p class="cuidados d-inline-block mx-2">
+              <a href="/care" class="btn btn-outline-light rounded-pill guia-tallas text-white">
+                <i class="fas fa-tshirt"></i> CUIDADOS
+              </a>
+              <i class="fas fa-arrow-left animated-arrow"></i>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer justify-content-center border-0"> <!-- Centra los botones -->
+        <button type="button" class="btn btn-secondary me-2" id="cancelModal" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="{{ site.baseurl }}/assets/js/modal-confirm.js" defer></script>
+<script>
+  renderizarCarrito();
+
+  function renderizarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const contenedor = document.getElementById('carrito-listado');
+    contenedor.innerHTML = '';
+
+    if (carrito.length === 0) {
+      contenedor.innerHTML = '<p class="text-center text-muted">Tu carrito está vacío.</p>';
+      document.getElementById('total-sum').textContent = '0';
+      return;
+    }
+
+    carrito.forEach((producto) => {
+      if (!producto.uid) {
+        producto.uid = crypto.randomUUID();
+      }
+
+      const item = document.createElement('div');
+      item.classList.add('mb-3');
+      item.id = `producto-${producto.uid}`;
+
+
+      item.innerHTML = `
+ <div class="d-flex align-items-center justify-content-between flex-wrap">
+  <div class="d-flex flex-wrap align-items-start border-bottom py-3 position-relative w-100">
+    <a href="${producto.url}"><img src="${producto.image}" alt="${producto.name}" class="me-3 rounded" style="width: 20vw; max-width: 100px; height: auto; object-fit: cover;"> </a>
+    <div class="flex-grow-1">
+      <h6 class="text-white text-truncate mb-1" style="max-width: 100%;">${producto.name} T-SHIRT</h6>
+      <small class="text-white d-block mb-2">
+        <strong>Tela:</strong> ${producto.tela} 
+        <strong>Género:</strong> ${producto.genero}<br> 
+        <strong>Talla:</strong> ${producto.talla} 
+        <strong>Color:</strong> ${producto.color}
+      </small>
+
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+  <div class="d-flex align-items-center mb-2">
+    <button class="btn btn-outline-secondary btn-sm" onclick="cambiarCantidad('${producto.uid}', -1)">−</button>
+    <div class="quantity x-2 fs-5 mx-2">${producto.cantidad}</div>
+    <button class="btn btn-outline-secondary btn-sm" onclick="cambiarCantidad('${producto.uid}', 1)">+</button>
+  </div>
+
+  <div class="ms-sm-3 mt-2 mt-sm-0">
+    <strong class="price-total fs-5">$${(producto.price * producto.cantidad).toLocaleString('es-ES')}</strong>
+  </div>
+</div>
+
+      <button class="btn btn-link text-danger position-absolute top-0 end-0" onclick="eliminarProducto('${producto.uid}')">
+        <i class="fa fa-trash"></i>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+
+
+      contenedor.appendChild(item);
+    });
+
+
+    calcularTotal(carrito);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+
+  function calcularTotal(carrito) {
+    const total = carrito.reduce((sum, producto) => sum + (producto.price * producto.cantidad), 0);
+    document.getElementById('total-sum').textContent = total.toLocaleString('es-ES');
+  }
+
+  function cambiarCantidad(uid, cambio) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const producto = carrito.find(p => p.uid === uid);
+
+    if (producto) {
+      producto.cantidad += cambio;
+      if (producto.cantidad < 1) producto.cantidad = 1;
+      if (producto.cantidad > 99) producto.cantidad = 99;
+
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+
+      const contenedor = document.getElementById(`producto-${uid}`);
+      if (contenedor) {
+        contenedor.querySelector('.quantity').textContent = producto.cantidad;
+        contenedor.querySelector('.price-total').textContent =
+          `$${(producto.price * producto.cantidad).toLocaleString('es-ES')}`;
+      }
+      actualizarContadorCarrito();
+      calcularTotal(carrito);
+    }
+  }
+
+  function eliminarProducto(uid) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito = carrito.filter(p => p.uid !== uid);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    const productoElemento = document.getElementById(`producto-${uid}`);
+    if (productoElemento) {
+      productoElemento.remove();
+    }
+
+    if (carrito.length === 0) {
+      document.getElementById('carrito-listado').innerHTML = '<p class="text-center text-muted">Tu carrito está vacío.</p>';
+      document.getElementById('total-sum').textContent = '0';
+    }
+
+    if (typeof actualizarContadorCarrito === 'function') {
+      actualizarContadorCarrito();
+    }
+
+    calcularTotal(carrito);
+  }
+
+  function clearLocalStorage() {
+    localStorage.clear();
+    location.reload();
+  }
+</script>
