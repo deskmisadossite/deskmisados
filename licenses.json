@@ -1,14 +1,14 @@
 [
   {
-    "license_id": "6e06e771-986a-4365-a877-20ccc8bc87dc",
+    "activated": true,
     "exp": 1771817556,
-    "activated": false,
-    "machine_id": ""
+    "license_id": "6e06e771-986a-4365-a877-20ccc8bc87dc",
+    "machine_id": "d0321ea5cc10718026987353a96a6e53cd7d933a7ca0c08c7f138b70fc8077c8"
   },
   {
-    "license_id": "66666666-7777-8888-9999-aaaaaaaaaaaa",
-    "exp": 1735689600,
     "activated": false,
+    "exp": 1735689600,
+    "license_id": "66666666-7777-8888-9999-aaaaaaaaaaaa",
     "machine_id": ""
   }
 ]
