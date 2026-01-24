@@ -1,0 +1,14 @@
+[
+  {
+    "license_id": "11111111-2222-3333-4444-555555555555",
+    "exp": 1735689600,
+    "activated": false,
+    "machine_id": ""
+  },
+  {
+    "license_id": "66666666-7777-8888-9999-aaaaaaaaaaaa",
+    "exp": 1735689600,
+    "activated": false,
+    "machine_id": ""
+  }
+]
